@@ -1,4 +1,4 @@
-package com.example.template.storage;
+package com.example.template.datasource.db;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

@@ -1,4 +1,4 @@
-package com.example.template.storage;
+package com.example.template.datasource;
 
 import android.content.Context;
 import android.content.SharedPreferences;

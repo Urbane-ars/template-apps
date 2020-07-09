@@ -1,17 +1,21 @@
-package com.example.template.mvp;
+package com.example.template.ui;
 
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.template.App;
 import com.example.template.R;
+import com.example.template.datasource.db.SomeData;
 
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -20,6 +24,8 @@ public class FirstActivity extends AppCompatActivity implements ViewContract {
 
     @Inject
     Presenter presenter;
+    @Inject
+    Adapter adapter;
 
 
     @Override
@@ -40,11 +46,13 @@ public class FirstActivity extends AppCompatActivity implements ViewContract {
                 presenter.addData();
             }
         });
+        RecyclerView recyclerView = findViewById(R.id.list_data);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
     }
 
-    public void updateList(String text){
-        TextView textView = findViewById(R.id.dataList);
-        textView.setText(text);
+    public void updateList(List<SomeData> list){
+        adapter.setData(list);
     }
 
     public String getData(){

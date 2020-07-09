@@ -5,8 +5,8 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.example.template.App;
-import com.example.template.storage.AppDatabase;
-import com.example.template.storage.SomeDataDAO;
+import com.example.template.datasource.db.AppDatabase;
+import com.example.template.datasource.db.SomeDataDAO;
 
 import javax.inject.Singleton;
 
